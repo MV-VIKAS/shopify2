@@ -1,0 +1,14 @@
+.btn {
+  color: var(--text-primary);
+  background-color: #ed7501;
+}
+
+.btn:hover {
+  color: var(--link-hover);
+  background-color: #313132;
+}
+
+.content {
+  text-decoration: none;
+  color: var(--text-primary);
+}

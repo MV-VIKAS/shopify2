@@ -1,0 +1,63 @@
+.addresscont {
+  background-color: #fff;
+  /* height: 30vh; */
+  height: auto;
+  width: 60%;
+  box-shadow: 0 0 3px 1px gray;
+  padding: 40px;
+  color: #333;
+  margin: 20px auto;
+  border-radius: 5px;
+  line-height: 1.6rem;
+}
+
+.addresscont .df {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  color: #333;
+}
+
+.df .adneadd {
+  border: none;
+  padding: 10px;
+  color: rgb(31, 190, 252);
+  box-shadow: 0 0 1px 0.5px gray;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.form {
+  background-color: #fff;
+  height: fit-content;
+  width: 60%;
+  margin: 50px auto;
+}
+
+.addname {
+  width: 60vw;
+  height: auto;
+  align-items: center;
+  justify-content: start;
+  box-shadow: 0 0 1px 0.5px gray;
+  margin: 10px;
+  padding: 10px;
+}
+
+.proceed {
+  padding: 10px;
+  background-color: rgb(43, 194, 253);
+  color: #fff;
+  font-size: large;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.remove svg {
+  height: 20px;
+  width: 20px;
+
+  margin-top: 30px;
+}

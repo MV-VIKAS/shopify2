@@ -1,0 +1,100 @@
+.wishlist {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.wishlist article {
+  width: 90%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 17.9rem;
+}
+.wishlist article h1 {
+  font-size: 2rem;
+  text-align: left;
+  margin: 20px 0;
+}
+.listContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 20px;
+}
+.wishlistProduct {
+  height: 300px;
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 10px;
+  gap: 20px;
+  padding: 20px;
+
+  cursor: pointer;
+}
+.wishlistProduct:hover {
+  box-shadow: 0 0 5px 2px;
+}
+.prodImg {
+  width: 250px;
+  height: 250px;
+}
+.prodImg img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
+.prodDetails {
+  width: 65%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+.prodDetails h2 {
+  /* text-align: left; */
+  margin: 0 !important;
+}
+.deleteIcon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: all linear 0.3s;
+}
+.deleteIcon:hover {
+  color: red;
+}
+
+.prodDetails > button {
+  padding: 5px;
+  border: 1px solid #f8981c; /*#345cba*/
+  color: #f8981c; /*#345cba*/
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  /*dark--> background-color:transparent; */
+}
+.prodDetails > button:hover {
+  background-color: var(--link-hover);
+  border-color: #f8981c;
+  color: var(--text-secondary);
+}
+.prodDetails > button:active {
+  background-color: #eda648;
+}

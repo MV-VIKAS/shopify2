@@ -1,0 +1,59 @@
+/* .mainContainer{
+    top:100%;
+    position:absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.662);
+    margin-top: 75px;
+    z-index: 10000;
+    
+    
+}
+
+.cardForTermsConditions{
+    width: 35%;
+    height: 65%;
+    overflow: hidden;
+    overflow-y: scroll;
+    color: black;
+
+}
+
+.TitleCard{
+    position: sticky;
+    width: 35%;
+    text-align: center;
+    background-color: white;
+}
+
+li{
+    list-style: none;
+}
+
+.btn{
+    width:75px;
+    height: 25px;
+    margin-bottom: 10px;
+    color:orangered;
+    font-size: large;
+    margin-left: 50px;
+}
+
+.checkbox{
+    size: 20px;
+} */
+
+.icon{
+    position:absolute;
+    top: 0px;
+    right:0px;
+    border-radius: 0 5px 0 0;
+    background-color: crimson;
+    color: white;
+    padding:8px;
+    cursor: pointer;
+}

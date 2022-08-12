@@ -1,0 +1,39 @@
+.divbg {
+  height: 100vh;
+  background-image: linear-gradient(rgb(46, 46, 46, 0.5), rgb(52, 52, 53, 0.5)),
+    url("https://cdn.pixabay.com/photo/2017/08/06/22/52/blouse-2597205_960_720.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  display: flex;
+  align-items: center;
+}
+
+.divbg h1 {
+  margin: auto;
+  color: white !important;
+  font-size: 3rem;
+}
+
+.welcomesection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.headings1 {
+  font-size: xx-large;
+  
+}
+
+.mainHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.mainHead img{
+    margin: 0%;
+}

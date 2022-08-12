@@ -1,0 +1,128 @@
+.chatbot {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 5px;
+  border-radius:100%;
+  background: linear-gradient(to top, #3acfd5 0%, #3a4ed5 100%);
+  cursor: pointer;
+  z-index: 101;
+}
+.chatbot-items {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-size: 14px;
+  background-color: #efefef;
+  color: black;
+}
+.chatbot svg {
+  margin-bottom: -3px;
+  margin-right: 2px;
+  font-size: 18px;
+}
+.chatbox {
+  position: fixed;
+  /* top: 0; */
+  bottom: 30px;
+  /* left: 0; */
+  right: 30px;
+  z-index: 102;
+  color: black;
+}
+.chatbox_content {
+  position: relative;
+  height: 430px;
+  width: 260px;
+  /* left: 1226px; */
+  /* top: 259px; */
+  background-color: #efefef;
+  box-shadow: 2px -2px 7px black;
+}
+.chatbox nav {
+  padding: 10px 10px 5px;
+  position: relative;
+  background-color: #1D2C4E;
+  color: white;
+}
+.nav_controls {
+  position: absolute;
+  right: 10px;
+}
+.nav_controls span {
+  padding: 5px;
+  cursor: pointer;
+}
+.chatbox footer {
+  padding: 10px 0;
+}
+.More_chat_options {
+  padding: 10px;
+  cursor: pointer;
+}
+.More_chat_options svg {
+  margin-bottom: -3px;
+}
+.chat_send_arrow {
+  padding: 10px;
+  cursor: pointer;
+}
+.chat_send_arrow svg {
+  margin-bottom: -3px;
+}
+#chat_input {
+  width: 180px;
+  height: 20px;
+  margin-bottom: 6px;
+  outline: none;
+}
+.main_chat_window {
+  height: 345px;
+  width: inherit;
+  background-color: #fff;
+}
+.main_chat_window article {
+  padding: 0 10px;
+}
+.chat_with_bot:hover {
+  background-color: #efefef;
+  cursor: pointer;
+}
+.chat_with_agents:hover {
+  background-color: #efefef;
+  cursor: pointer;
+}
+.user_chat_style {
+  display: flex;
+  justify-content: flex-end;
+}
+.user_chat_style_span {
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #d9dffd;
+}
+.agent_chat_style_span {
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #e8e8e8;
+}
+.bot_ques {
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #d9dffd;
+}
+.bot_ans {
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #efefef;
+  border: 1px solid white;
+}
+.bot_ans:hover {
+  background-color: #d9dffd;
+  border: 1px solid gray;
+  cursor: pointer;
+}

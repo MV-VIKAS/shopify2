@@ -1,0 +1,188 @@
+.navbar {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  background-color: white; /*dark--->  #141e37*/
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  /* box-shadow: 0px 2px 4px 1px #afafaf; */
+}
+.navbar article {
+  width: 90%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logoBlock {
+  width: 20%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+.logoBlock a {
+  width: 100%;
+  height: 10vh;
+  display: flex !important;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  /* gap: 10px; */
+}
+.logoBlock img {
+  width: 20%;
+  height: 5vh;
+  object-fit: contain;
+}
+
+.logoBlock svg{
+  fill: #ea0303;
+  font-size: xx-large;
+  margin-left: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+
+.logoBlock h1 {
+  font-size: 1.8rem;
+  color: var(--text-primary) !important;
+  transition: all 0.3s linear;
+  font-weight: bold;
+  margin-bottom: 0.85rem;
+}
+.logoBlock h1:hover {
+  color: var(--link-hover) !important;
+}
+.authBlock {
+  width: 20%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.authBlock2 {
+  width: 20%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.authBlock > a {
+  color: var(--text-primary);
+  transition: all 0.3s linear;
+  cursor: pointer;
+  display: inline-block;
+  /* padding-bottom:2rem; */
+}
+.authBlock2 > a {
+  color: var(--text-primary);
+  transition: all 0.3s linear;
+}
+.authBlock > a:hover {
+  color: var(--text-secondary);
+}
+.Loginbutton {
+  padding: 8px 16px;
+  border: 1px solid var(--span-color);
+  border-radius: 10px;
+  color: var(--span-color);
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: sans-serif;
+  background-color: transparent;
+}
+
+/* .Signupbutton{
+   padding: 8px 16px;
+  border: 1px solid green;
+  border-radius: 10px;
+  color: green;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: transparent;
+} */
+
+
+.authBlock button:hover {
+  background-color: var(--span-color);
+  color: var(--text-secondary);
+}
+.cartIcon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  cursor: pointer;
+}
+.cartIcon svg {
+  height: 30px;
+  width: 30px;
+}
+.cartIcon > span {
+  background-color: green;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  position: absolute;
+  top: -5px;
+  right: -0.7rem;
+  color: white;
+  /* margin-left: -12px;
+  margin-top: -21px; */
+}
+.searchBlock {
+  width: 50%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.searchContainer input {
+  width: 100%;
+  padding:  10px;
+  border: none;
+  background-color: #efefef;
+  border-radius: 4px 0 0 4px;
+}
+.searchContainer input:focus {
+  outline: none;
+}
+.searchContainer svg {
+  width: 8%;
+  height: 35px;
+  background-color: #FBB454;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  fill: var(--text-secondary);
+}
+
+.merchentDrop{
+  position: absolute;
+  right: 1rem;
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  top: 3.5rem;
+  border-radius: 10px;
+}
+
+.merchentDrop span{
+  border-bottom: 1px solid;
+  padding: 0.5rem 0;
+}

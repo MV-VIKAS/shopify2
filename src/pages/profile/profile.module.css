@@ -1,0 +1,154 @@
+.section {
+  width: 100%;
+  height: 700px;
+  background: rgb(245, 240, 240);
+  background: radial-gradient(
+    circle,
+    rgba(245, 240, 240, 1) 84%,
+    rgba(227, 233, 233, 1) 100%,
+    rgba(244, 239, 239, 1) 100%
+  );
+}
+.img {
+  width: 250px;
+  height: 250px;
+  border-radius: "8px";
+}
+
+.section article > form {
+  padding: 100px auto;
+  width: 80%;
+  height: 550px;
+  margin: 5px auto;
+  display: flex;
+  justify-content: space-around;
+}
+.card {
+  margin-top: 15px;
+  width: 250px;
+  height: 550px;
+
+  box-shadow: 0px 0px 10px 0.5px #333;
+  background-color: rgba(227, 233, 233, 1);
+  background-color: white;
+}
+.card img {
+  padding: 35px;
+}
+.card h1 {
+  border-bottom: 2px solid gray;
+}
+.info {
+  margin-top: 50px;
+  /* text-align: center; */
+  line-height: 30px;
+}
+.info li {
+  /* background: rgb(29, 44, 78); */
+  color: #0066b2;
+  margin-top: 5px;
+  list-style: none;
+  cursor: pointer;
+}
+.info li:hover {
+  color: #f8981c;
+}
+.details {
+  margin-top: 15px;
+  width: 680px;
+  height: 550px;
+  box-shadow: 0px 0px 10px 0.5px #333;
+
+  background-color: white;
+  text-align: left;
+}
+.details > div {
+  margin: 20px;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+}
+.details > div input {
+  width: 350px;
+  height: 30px;
+  margin: 8px 0px;
+}
+.gender {
+  margin-left: 100px;
+}
+.gender label {
+  margin-left: 10px;
+}
+.gender input {
+  margin-left: 20px;
+}
+.addAddress {
+  color: #0066b2;
+  width: 200px;
+  border: 0.5px solid silver;
+  padding: 3px;
+  cursor: pointer;
+}
+.cardDetails {
+  border: 2px solid #222;
+  padding: 10px;
+  position: relative;
+  margin: 20px 0;
+  border-radius: 4px;
+  color: black;
+  box-shadow: 10px 10px 5px 0.5px gray;
+}
+.cardDetails p {
+  text-transform: uppercase;
+}
+.details lable {
+  color: black !important;
+}
+
+.accsett {
+  background-color: lavender;
+  padding: 2rem;
+  min-height: fit-content;
+  font-weight: bold;
+}
+
+.accsett ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 40vh;
+}
+
+.accsett ul li {
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.userBox {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: bold;
+  justify-content: space-between;
+  width: 100vh;
+  padding: 1rem;
+}
+
+.userBox div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5;
+}
+
+.userBox div ul{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.userBox div ul li{
+  margin: 0 1rem;
+}

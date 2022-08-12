@@ -1,0 +1,82 @@
+.sect {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 1rem;
+}
+
+.left {
+  position: relative;
+  top: 40px;
+  left: 18px;
+}
+
+.rightabove {
+  color: black;
+  width: 70%;
+  background-color: #1723372e;
+  position: relative;
+  left: 40px;
+  top: 40px;
+  border-radius: 7px;
+}
+
+
+
+.editpromodal {
+  position: absolute;
+  top: 3rem;
+}
+
+.editprofilebox {
+  padding: 2rem;
+  align-items: center;
+}
+
+.editprofilebox h2 {
+  padding-bottom: 3rem;
+}
+
+.ediprofileDashbord {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 40vh;
+}
+
+.dashboardOutlet {
+  margin: 1rem;
+  width: 100%;
+}
+
+.ediprofileDashNavlink {
+  padding: 1rem 0.8rem;
+  color: black;
+  border-left: 4px solid white;
+  font-weight: 700;
+}
+
+.profileDashactive {
+  background-color: #f3f3f3 !important;
+  color: deeppink !important;
+  padding: 1rem 0.8rem;
+  border-left: 4px solid deeppink;
+    font-weight: 700;
+}
+
+.userDashimage{
+  width: 7vw;
+  background-color: #e4e4e4;
+  
+}
+
+.hello{
+  background-color: #ffffff;
+}
+
+.myprofileAddress{
+  margin: 1rem;
+  width: 100%;
+}

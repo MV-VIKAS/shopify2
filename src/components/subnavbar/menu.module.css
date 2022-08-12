@@ -1,0 +1,92 @@
+.catMenu {
+  background-color: #391e65;
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 10vh;
+  /* height: 8vh; */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.menuBlock {
+  flex-basis: 40%;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 1rem 0;
+}
+.menuBlock nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.menuBlock nav ul li {
+  list-style: none;
+}
+.menuBlock nav ul li a {
+  text-decoration: none;
+  font-weight: normal;
+  padding: 30px 18px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+.menuBlock nav ul li a sup {
+  color: deeppink;
+  font-size: 12px;
+  margin: 0 5px;
+  font-weight: bold;
+  position: relative;
+  top: -6px;
+}
+.menuBlock nav ul li {
+  position: relative;
+}
+.dropDown {
+  min-width: 420px;
+  min-height: 380px;
+  position: absolute;
+  left: -11px;
+  top: 39px;
+  background-color: #fff;
+  display: none;
+  z-index: 1;
+}
+.dropDown aside {
+  width: 420px;
+  display: flex;
+  align-items: stretch;
+  height: 500px;
+}
+.dropDown aside div {
+  flex: 1;
+}
+.dropDown aside div:nth-child(odd) {
+  background-color: #dfdede;
+}
+.dropDown aside div:nth-child(even) {
+  background-color: #fff;
+}
+.dropDown aside div ul {
+  display: block;
+  padding: 20px 7px;
+}
+.dropDown aside div ul li {
+  font-size: 12px;
+  line-height: 25px;
+}
+.dropDown aside div ul li a {
+  font-size: 11px;
+  color: black;
+}
+.dropDown ul li:first-child a {
+  color: #ee5f73;
+  font-size: 12px;
+  font-weight: bold;
+  padding-bottom: 4px;
+  display: block;
+}
+.menuBlock nav > ul > li:hover .dropDown {
+  display: block;
+  left: -120px;
+}

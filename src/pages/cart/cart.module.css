@@ -1,0 +1,262 @@
+.cartBlock {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 20px 0; */
+}
+.cartBlock article {
+  width: 90%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 30px;
+}
+.cartBlock article h1 {
+  font-size: 3rem;
+}
+.checkoutCarousel {
+  width: 100%;
+  height: 50vh;
+}
+.checkoutCarousel img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  object-position: 0% -50%;
+}
+.cartContainer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px 0;
+  background-color: #efefef;
+  color: #666;
+}
+.checkoutProductContainer {
+  width: 70%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  /* border-right: 1px solid; */
+}
+.cartProduct {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  padding: 20px;
+  /* background-color: #909090; */
+  justify-content: space-evenly;
+  border: 1px solid;
+  align-items: center;
+  margin: 5px 0;
+  cursor: pointer;
+
+  /* margin: 1px 0; */
+}
+.cartProduct img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+.productDetails {
+  width: 30%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  gap: 15px;
+  padding: 25px 10px;
+}
+
+.moreDetails {
+  width: 30%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+.moreDetails span:nth-child(2) {
+  color: rgba(255, 105, 180, 0.762);
+}
+.moreDetails span:nth-child(3) {
+  font-weight: 500;
+  color: var(--heading-primary);
+}
+.moreDetails button {
+  padding: 10px 20px;
+  border: 1px solid crimson;
+  color: crimson;
+  transition: all 0.3s linear;
+  font-weight: 600;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.moreDetails button:hover {
+  background-color: crimson;
+  color: #111;
+}
+.subtotalContainer {
+  width: 25%;
+  height: 300px;
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 13%;
+  right: 0;
+
+  /* align-items: center; */
+}
+.subtotalContainer h2 {
+  font-family: "Varela Round", sans-serif !important;
+  margin: 0 !important;
+}
+.subtotalContainer button {
+  padding: 5px;
+  border: 1px solid #1d2c4e;
+  color: #1d2c4e;
+  background-color: var(--link-hover);
+  border-radius: 5px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  width: 70%;
+  margin: auto;
+}
+.subtotalContainer button:hover {
+  background-color: #1d2c4e;
+  color: var(--link-hover);
+}
+.formControl {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+.emptyCart img {
+  object-fit: cover;
+  width: 30vw;
+}
+
+.quantity {
+  display: inline-block;
+  width: 6.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.quantity svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #282222;
+  cursor: pointer;
+}
+/* .quantity svg:nth-child(1) {
+  fill: #62e64d;
+} */
+/* .moreDetails>span:nth-child(1) {
+  visibility: hidden;
+} */
+.cartOrder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(182, 181, 181, 0.796);
+  border-radius: 10px;
+}
+.orderHeader {
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  column-gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.orderStatus {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.orderTotal {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.deliveryAddress {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+/* .orderListContainer {
+  width: 90%;
+  margin: auto;
+} */
+.orderNumber {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.orderListContainer {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0 20px;
+  margin: auto;
+}
+.cancelOrder {
+  width: 10%;
+}
+.cancelOrder button {
+  background-color: transparent;
+  color: red;
+  padding: 8px 14px;
+  border: 1px solid red;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+.cancelOrder button:hover {
+  background-color: red;
+  color: #efefef;
+}
+.orderNumber button {
+  width: 50%;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #1d2c4e;
+  color: #1d2c4e;
+  background-color: var(--link-hover);
+  transition: all 0.3s linear;
+}
+.subtotalContainer h3 {
+  text-align: center;
+}
+.orderListContainer h1 {
+  margin: 20px 0;
+}

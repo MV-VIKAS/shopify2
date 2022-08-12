@@ -1,0 +1,33 @@
+.checkoutcard {
+  width: 70%;
+  height: 60vh;
+  background-color: #fff;
+  box-shadow: 0 0 2px 1.5px lightgrey;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.radiodiv {
+  width: 60%;
+  height: 15vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 25px auto;
+}
+
+.arc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-weight: bold;
+}
+
+.arc svg {
+  height: 30px;
+  width: 30px;
+  color: rgb(29, 188, 251);
+}

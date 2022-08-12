@@ -1,0 +1,73 @@
+.footer_Section {
+  /* margin-top: 117px; */
+  background-color: var(--bg-color);
+  color: var(--list-color);
+  padding: 20px;
+}
+.footer_Links > div div:first-child {
+  color: var(--svg-fill-color);
+  margin-bottom: 0.8rem;
+}
+.footer_Lowerhalf > div span:first-child {
+  color: var(--svg-fill-color);
+}
+.footer_Upperhalf {
+  display: flex;
+  width: 100%;
+  padding: 0 5rem;
+}
+.footer_Links {
+  display: flex;
+  width: 60%;
+  gap: 5rem;
+}
+.footer_EmailContact {
+  display: flex;
+  width: 40%;
+  gap: 5rem;
+}
+.footer_EmailContact > div div:first-child {
+  color: var(--svg-fill-color);
+  margin-bottom: 0.8rem;
+}
+.sideBorder {
+  border: 1px solid var(--lines-color);
+  height: 8rem;
+  width: 1px;
+  margin-top: 1rem;
+  margin: 10px;
+}
+.footer_EmailContact div:first-child {
+  margin-left: 1rem;
+}
+.bottomBorder {
+  border: 1px solid var(--lines-color);
+  height: 1px;
+  width: 100%;
+  margin-top: 1rem;
+  background-color: var(--lines-color);
+}
+.footer_Lowerhalf {
+  width: 90%;
+  display: flex;
+  /* gap: 6rem; */
+  margin-left: 4rem;
+  align-items: center;
+}
+.footer_Lowerhalf > div {
+  display: flex;
+  align-items: center;
+  width: 10%;
+  gap: 5px;
+}
+.footer_Lowerhalf > div:nth-child(5) {
+  width: 20% !important;
+}
+.payments {
+  width: 40% !important;
+}
+.payments img {
+  width: 80%;
+  height: 100px;
+  object-fit: contain;
+}
