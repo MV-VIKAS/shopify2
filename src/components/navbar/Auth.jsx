@@ -99,7 +99,7 @@ const Auth = () => {
       }
     } catch (err) {
       console.log(err);
-      toast.error(err.response.data.data);
+      // toast.error(err.response.data.data);
       setShowBackdrop(false);
     }
 

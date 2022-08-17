@@ -36,4 +36,6 @@ const CustomRoutes2 = () => {
   return myRoutes;
 };
 
+
+
 export default CustomRoutes2;

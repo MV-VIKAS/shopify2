@@ -142,7 +142,7 @@ const CheckoutProducts = () => {
                 {/* <StarRatings rating={rating} /> */}
                 <span>{rating}⭐</span>
 
-                <span>₹{price}</span>
+                {/* <span>₹{price}</span> */}
                 <CalculateOffer originPrice={price} offerPercentage={offer} />
                 <div className={styles.quantity}>
                   <AiOutlineMinusCircle

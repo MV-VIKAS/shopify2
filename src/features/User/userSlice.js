@@ -15,6 +15,16 @@ export const editProfile = createAsyncThunk(
     return { ...userData };
   }
 );
+export const getCurrentUser = createAsyncThunk(
+  "user/getCurrentUser",
+  async id => {
+    // let { data } = await Axios.get(`customers/${id.userId}`);
+    let data = await fetch(
+      `http://localhost:8080/shopping-kart-ty-api-0.0.1-SNAPSHOT/customers/${id.userId}`
+    );
+    return data.json();
+  }
+);
 
 const userSlice = createSlice({
   name: "user",
@@ -38,6 +48,13 @@ const userSlice = createSlice({
       state.currentUser = { ...action.payload.payload };
     },
     [editProfile.rejected]: (state, action) => {
+      state.error = action.error.message;
+    },
+    [getCurrentUser.fulfilled]: (state, action) => {
+      // let index = state.currentUser.findIndex((v) => v.userId == action.payload.id);
+      state.currentUser = action.payload.data;
+    },
+    [getCurrentUser.rejected]: (state, action) => {
       state.error = action.error.message;
     },
   },
