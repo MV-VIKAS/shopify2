@@ -11,9 +11,13 @@ let initialState = {
   heading: "",
   rating: "",
 };
-function UpdateReview({ open, onClose, orderId, productId }) {
-  let [userData, setUserData] = useState(initialState);
-  let [review,setReview] = useState([])
+function UpdateReview({ open, onClose, orderId, productId, review }) {
+  let [userData, setUserData] = useState({
+    rating: review.rating,
+    heading: review.heading,
+    description: review.description,
+  });
+  // let [review,setReview] = useState([])
   console.log(userData);
   let navigate = useNavigate();
   let { userId } = useSelector(state => state.user.currentUser);
@@ -25,31 +29,31 @@ function UpdateReview({ open, onClose, orderId, productId }) {
     let value = e.target.value;
     setUserData(pre => ({ ...pre, [e.target.name]: value }));
   };
-  // console.log(thisReview);
+  console.log(review);
 
-  let getReview = () => {
-    try {
-      fetch(
-        `http://localhost:8080/shopping-kart-ty-api-0.0.1-SNAPSHOT/review/product/${productId}`
-      )
-        .then(data => data.json())
-        .then(fData => setReview(fData.data));
-      // setThisReview(data.json());
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    getReview();
-  }, []);
+  // let getReview = () => {
+  //   try {
+  //     fetch(
+  //       `http://localhost:8080/shopping-kart-ty-api-0.0.1-SNAPSHOT/review/product/${productId}`
+  //     )
+  //       .then(data => data.json())
+  //       .then(fData => setReview(fData.data));
+  //     // setThisReview(data.json());
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // useEffect(() => {
+  //   getReview();
+  // }, []);
 
   const handleSubmit = async e => {
     e.preventDefault();
-    console.log(id);
 
     try {
-      Axios.post(
-        `/review/customer/${userId}/order/${orderId}/product?product_id=${productId}`,
+      console.log(userData, review);
+      Axios.put(
+        `/review/customer/${review.userId}/order/${orderId}/product/${productId}/updatereview?review_id=${review.reviewId}`,
         userData
       );
 

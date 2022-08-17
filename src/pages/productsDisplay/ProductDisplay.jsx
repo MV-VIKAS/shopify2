@@ -18,13 +18,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { OpenLogin } from "../../features/Login/LoginSlice";
 import StarRatings from "../../components/starRating/StarRatings";
 import CalculateOffer from "../../components/Offer Helper Components/CalculateOffer";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Rating } from "@mui/material";
 import { AiOutlineDown } from "react-icons/ai";
 // import ReactImageZoom from "react-image-zoom";
 import AddReview from "./../review/AddReview";
 import UpdateReview from "./../review/UpdateReview";
-
-import Review from "./../cart/ProductCheckout/Review";
+import CardHeader from "@mui/material/CardHeader";
+import CardContent from "@mui/material/CardContent";
+import Avatar from "@mui/material/Avatar";
+import IconButton, { IconButtonProps } from "@mui/material/IconButton";
+import { red } from "@mui/material/colors";
+import { Divider } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -68,6 +72,7 @@ const ProductDisplay = () => {
 
   const orderList = useSelector(state => state.orders.orderList);
   const [orderId, setOrderId] = useState("");
+  let [review, setReview] = useState({});
 
   // to check whehter the products has been ordered and delivered
 
@@ -87,8 +92,10 @@ const ProductDisplay = () => {
       }
       return order.orderId;
     });
-    console.log(tempOrderId);
   }, []);
+  // useEffect(() => {
+  //   setReview(currentProduct.reviews.find(v => v.userId == userId));
+  // }, []);
   useEffect(() => {
     // setIdList(cartList.map(item => item.productId));
     setCartIdList(cartlist.map(item => item.productId));
@@ -104,21 +111,7 @@ const ProductDisplay = () => {
     }
     navigate("/selectaddress");
   };
-  // const fetchProd = async () => {
-  //   try {
-  //     let { data } = await Cataxios.get(`/allProduct/${id}`);
-  //     console.log("fetching....");
-  //     setProduct(data);
-  //     setPrice(data.price);
-  //     setDescription(data.description);
-  //     setBrand(data.brand);
-  //     setRating(data.rating);
-  //     setProductName(data.title);
-  //     setOffer(data.offer);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+
   let payload = {
     cost: currentProduct.price,
     imageLink: currentProduct.thumbnailURL,
@@ -130,14 +123,16 @@ const ProductDisplay = () => {
     payload,
   };
   useEffect(() => {
-    // fetchProd();
     fetch(
       `http://localhost:8080/shopping-kart-ty-api-0.0.1-SNAPSHOT/products/${id}`
     )
       .then(res => res.json())
       .then(data => setCurrentProduct(data.data))
       .catch(err => console.log(err));
-  }, []);
+  }, [openUpdatereview]);
+  useEffect(() => {
+    setReview(currentProduct.reviews?.find(v => v.userId == userId));
+  }, [currentProduct]);
 
   useEffect(() => {
     setDelivered(
@@ -171,6 +166,7 @@ const ProductDisplay = () => {
           onClose={handleUpdateClose}
           orderId={delivered.id}
           productId={id}
+          review={review}
         />
       )}
       <div className={style.prdouctPage}>
@@ -228,16 +224,7 @@ const ProductDisplay = () => {
                     );
                   })}
               </Carousel>
-              <div className={style.detailDescription}>
-                <summary>
-                  <h3>Detailed Description</h3>
-                  <h4>{description}</h4>
-                </summary>
-              </div>
             </section>
-            <footer className={style.imgCardFooterCard}>
-              {currentProduct.price > 1000 && <span>free Delivery</span>}
-            </footer>
           </div>
 
           {/* --------------------------------------------------------------------------------------------------- */}
@@ -267,8 +254,10 @@ const ProductDisplay = () => {
               
             </span>
           </section> */}
-
-            <Accordion className={style.starAccordion}>
+            <div className={style.starHeading}>
+              <StarRatings rating={currentProduct.rating} />
+            </div>
+            {/* <Accordion className={style.starAccordion}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panelstar-content"
@@ -369,7 +358,7 @@ const ProductDisplay = () => {
                   </div>
                 </div>
               </AccordionDetails>
-            </Accordion>
+            </Accordion> */}
             {/* <span>
             Ratings:
             <span className={style.ratingstag}>
@@ -391,6 +380,9 @@ const ProductDisplay = () => {
                 offerPercentage={currentProduct.offer}
               />
             </span>
+            <footer className={style.imgCardFooterCard}>
+              {currentProduct.price > 1000 && <span>free Delivery</span>}
+            </footer>
             <section className={style.btnContainer}>
               <button className={style.buyNow} onClick={handleBuy}>
                 Buy Now
@@ -423,29 +415,67 @@ const ProductDisplay = () => {
               </button>
 
               <Box>
-                Reviews
-                <Grid></Grid>
-              </Box>
-              {currentUser.customerOrders.length != 0 &&
-              delivered != undefined ? (
-                currentProduct.reviews?.some(v => v.userId == userId) ? (
-                  <button
-                    className={style.buyNow}
-                    onClick={() => setOpenUpdatereview(true)}
-                  >
-                    Update Review
-                  </button>
+                {currentUser.customerOrders.length != 0 &&
+                delivered != undefined ? (
+                  currentProduct.reviews?.some(v => v.userId == userId) ? (
+                    <button
+                      className={style.buyNow}
+                      onClick={() => setOpenUpdatereview(true)}
+                    >
+                      Update Review
+                    </button>
+                  ) : (
+                    <button
+                      className={style.buyNow}
+                      onClick={() => setOpenAddreview(true)}
+                    >
+                      Add Review
+                    </button>
+                  )
                 ) : (
-                  <button
-                    className={style.buyNow}
-                    onClick={() => setOpenAddreview(true)}
-                  >
-                    Add Review
-                  </button>
-                )
-              ) : (
-                ""
-              )}
+                  ""
+                )}
+              </Box>
+              <h3>Reviews</h3>
+              <Card sx={{ maxWidth: 345 }}>
+                {currentProduct.reviews?.map(review => {
+                  return (
+                    <div key={review.reviewId}>
+                      <CardHeader
+                        avatar={
+                          <Avatar
+                            sx={{ bgcolor: red[500] }}
+                            aria-label="recipe"
+                          >
+                            {review.userName.charAt(0).toUpperCase()}
+                          </Avatar>
+                        }
+                        title={review.userName}
+                        subheader={new Date(
+                          `${review.dateTime}`
+                        ).toLocaleString()}
+                      />
+                      <Typography style={{ marginLeft: "4%" }}>
+                        <span style={{ display: "flex", alignItems: "center" }}>
+                          <Rating
+                            name="read-only"
+                            value={review.rating}
+                            readOnly
+                          ></Rating>
+                          <strong>{review.heading}</strong>
+                        </span>
+                      </Typography>
+
+                      <CardContent>
+                        <Typography variant="body2" color="text.secondary">
+                          {review.description}
+                        </Typography>
+                      </CardContent>
+                      <Divider />
+                    </div>
+                  );
+                })}
+              </Card>
             </section>
           </div>
         </div>
