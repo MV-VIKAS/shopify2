@@ -29,6 +29,7 @@ import Avatar from "@mui/material/Avatar";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import { red } from "@mui/material/colors";
 import { Divider } from "@material-ui/core";
+import AllReview from "../review/AllReview";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -69,18 +70,19 @@ const ProductDisplay = () => {
   let [delivered, setDelivered] = useState(undefined);
   const [openAddreview, setOpenAddreview] = useState(false);
   const [openUpdatereview, setOpenUpdatereview] = useState(false);
+  const [showRating, setShowRating] = useState(false);
 
   const orderList = useSelector(state => state.orders.orderList);
   const [orderId, setOrderId] = useState("");
   let [review, setReview] = useState({});
 
   // to check whehter the products has been ordered and delivered
-
+  console.log(delivered);
   useEffect(() => {
     let pId = id;
     let tempOrderId;
     let exists = false;
-    orderList.filter(order => {
+    orderList?.filter(order => {
       order.orderedItems.filter(oProduct => {
         if (oProduct.productId === pId) {
           exists = true;
@@ -102,7 +104,7 @@ const ProductDisplay = () => {
   }, [cartlist]);
   useEffect(() => {
     dispatch(getCurrentUser({ userId }));
-  }, []);
+  }, [currentProduct]);
 
   let handleBuy = e => {
     if (!currentUser.email) {
@@ -136,20 +138,20 @@ const ProductDisplay = () => {
 
   useEffect(() => {
     setDelivered(
-      currentUser.customerOrders.find(
+      currentUser.customerOrders?.find(
         v =>
           v.orderStatus == "DELIVERED" &&
-          v.orderedItems.some(i => i.productId == currentProduct.productId)
+          v.orderedItems?.some(i => i.productId == currentProduct.productId)
       )
     );
-  }, [currentProduct]);
+  }, [currentUser]);
   const handleAddClose = value => {
     setOpenAddreview(false);
   };
   const handleUpdateClose = value => {
     setOpenUpdatereview(false);
   };
-
+  console.log(showRating);
   return (
     <>
       {openAddreview && (
@@ -254,9 +256,21 @@ const ProductDisplay = () => {
               
             </span>
           </section> */}
-            <div className={style.starHeading}>
+            <div
+              className={style.starHeading}
+              onMouseEnter={_ => setShowRating(true)}
+              onMouseLeave={_ => setShowRating(false)}
+            >
               <StarRatings rating={currentProduct.rating} />
             </div>
+            {showRating && (
+              <AllReview
+                style={{ zIndex: "2", position: "absolute" }}
+                productId={id}
+                reviews={currentProduct.reviews}
+                showRating={showRating}
+              />
+            )}
             {/* <Accordion className={style.starAccordion}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
@@ -415,7 +429,7 @@ const ProductDisplay = () => {
               </button>
 
               <Box>
-                {currentUser.customerOrders.length != 0 &&
+                {currentUser.customerOrders?.length != 0 &&
                 delivered != undefined ? (
                   currentProduct.reviews?.some(v => v.userId == userId) ? (
                     <button

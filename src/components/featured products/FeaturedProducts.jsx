@@ -108,11 +108,12 @@ const FeaturedProducts = () => {
                   <div className={styles.cardBody}>
                     <img src={thumbnailURL} alt={title} />
                   </div>
+                  {rating > 4.6 ? <span className={styles.featuredText}>Featured</span> : null}
                   <div className={styles.cardHeader}>
-                    <span>{rating.toFixed(1)}</span>
+                    {/* <span>{rating.toFixed(1)}</span> */}
+
                     <StarRatings rating={rating} left="2.5" />
                     {/* <span style={{color:"black"}}>{rating}</span> */}
-                    {rating > 4.6 ? <span>Featured</span> : null}
                   </div>
                   <div className={styles.cardFooter}>
                     <div className={styles.footerLeft}>

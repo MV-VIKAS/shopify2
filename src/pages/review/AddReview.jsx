@@ -26,7 +26,7 @@ function AddReview({ open, onClose, orderId, productId }) {
   };
   const handleSubmit = async e => {
     e.preventDefault();
-    console.log(id);
+    console.log(userData);
 
     try {
       Axios.post(
@@ -36,7 +36,7 @@ function AddReview({ open, onClose, orderId, productId }) {
 
       setTimeout(() => {
         onClose();
-        toast.success("successfully updated");
+        toast.success("successfully added");
       }, 300);
     } catch (err) {
       toast.error(err);

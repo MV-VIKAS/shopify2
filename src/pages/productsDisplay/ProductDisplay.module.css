@@ -15,7 +15,6 @@ img {
 .sectionCard {
   width: 90%;
   margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -225,6 +224,8 @@ img {
 }
 .starHeading {
   margin-bottom: 20px;
+  padding: 5%;
+  width: 40%;
 }
 .starAccordion {
   margin: 20px 0;
@@ -234,6 +235,8 @@ img {
 .ratingsContainer {
   width: 100%;
   display: flex;
+  position: relative;
+  z-index: 2;
   flex-direction: column;
   gap: 10px;
   justify-content: center;

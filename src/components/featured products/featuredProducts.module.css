@@ -140,3 +140,9 @@
 .paginationComp {
   margin-bottom: 20px;
 }
+.featuredText{
+display: flex;
+justify-content: flex-end;
+padding-right: 20px;
+font-weight: 600;
+}
